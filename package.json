@@ -38,6 +38,7 @@
     "template"
   ],
   "dependencies": {
+    "@nativescript-community/ui-material-bottomsheet": "^5.3.11",
     "@nativescript/core": "~8.0.0",
     "@react-navigation/core": "^5.15.3",
     "react": "~16.13.1",
@@ -46,6 +47,7 @@
     "react-refresh": "~0.8.3"
   },
   "devDependencies": {
+    "@nativescript/android": "8.0.0",
     "@nativescript/types": "~8.0.0",
     "@nativescript/webpack": "beta",
     "@pmmmwh/react-refresh-webpack-plugin": "~0.4.0-beta.5",
