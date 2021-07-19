@@ -1,6 +1,5 @@
 
 import { ViewWithBottomSheetBase } from '@nativescript-community/ui-material-bottomsheet/bottomsheet-common';
-import { StackLayout } from '@nativescript/core';
 import * as React from 'react'
 import * as RNS from 'react-nativescript'
 
@@ -8,7 +7,7 @@ import * as RNS from 'react-nativescript'
 const portalRoot = new RNS.NSVRoot();
 const portalLabel = "bottomsheet:Unique label to describe my portal";
 
-export default function BottomSheetTest() {
+export default function BottomSheet() {
     // A ref to the container 
     const containerRef = React.useRef(null);
 

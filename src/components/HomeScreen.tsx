@@ -4,7 +4,8 @@ import { FrameNavigationProp } from "react-nativescript-navigation";
 import { StyleSheet } from "react-nativescript";
 import { MainStackParamList } from "./NavigationParamList";
 import Modal from "./Modal";
-import BottomSheetTest from "./BottomSheetTest";
+import BottomSheet from "./BottomSheet";
+import { SnackBarTest } from "./SnackBar";
 
 type HomeScreenProps = {
     route: RouteProp<MainStackParamList, "Home">,
@@ -12,10 +13,12 @@ type HomeScreenProps = {
 }
 
 export function HomeScreen({ navigation }: HomeScreenProps) {
+    const containerRef = React.useRef(null)
     return (
-        <flexboxLayout style={styles.container}>
+        <flexboxLayout style={styles.container} ref={containerRef}>
             <Modal />
-            <BottomSheetTest />
+            <BottomSheet />
+            <SnackBarTest ref={containerRef} />
         </flexboxLayout>
     );
 }

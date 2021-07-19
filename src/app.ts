@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { install } from '@nativescript-community/ui-material-bottomsheet'
+
 install()
 
 /* Controls react-nativescript log verbosity. true: all logs; false: only error logs. */
