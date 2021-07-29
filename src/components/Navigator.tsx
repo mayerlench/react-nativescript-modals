@@ -8,8 +8,8 @@ import { SnackbarProvider } from "../context/SnackbarContext";
 const StackNavigator = stackNavigatorFactory();
 
 export const mainStackNavigator = () => (
-    <BaseNavigationContainer ref={navigationRef}>
-        <SnackbarProvider>
+    <SnackbarProvider>
+        <BaseNavigationContainer ref={navigationRef}>
             <StackNavigator.Navigator
                 initialRouteName="Home"
                 screenOptions={{
@@ -24,6 +24,7 @@ export const mainStackNavigator = () => (
                     component={HomeScreen}
                 />
             </StackNavigator.Navigator>
-        </SnackbarProvider>
-    </BaseNavigationContainer>
+        </BaseNavigationContainer>
+    </SnackbarProvider>
+
 );
