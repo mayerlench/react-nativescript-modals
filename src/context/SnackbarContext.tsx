@@ -1,6 +1,6 @@
 import React, { createContext, useRef } from 'react'
 import { SnackBar, SnackBarOptions } from '@nativescript-community/ui-material-snackbar';
-import { navigationRef } from '../utils/navigationRef';
+import { Frame, StackLayout } from '@nativescript/core';
 
 export interface SnackbarContextValue {
     simple: (message: string, textColor?: string, backgroundColor?: string, maxLines?: number, isRTL?: boolean) => Promise<any>
@@ -17,14 +17,17 @@ export const SnackbarProvider = ({ children }) => {
     const snackbar = new SnackBar();
 
     const simple = (message: string, textColor?: string, backgroundColor?: string, maxLines?: number, isRTL?: boolean) => {
-        const view = ref.current.nativeView
+        const view = ref.current.nativeView as StackLayout
+        const frame = view.getChildAt(0) as Frame
+        const page = frame.currentEntry.create()
+  
         return snackbar.action({
             message,
             textColor,
             backgroundColor,
             maxLines,
             isRTL,
-            view
+            view: page
         })
     }
     const action = (options: SnackBarOptions) => snackbar.action({ ...options, view: ref.current.nativeView })
