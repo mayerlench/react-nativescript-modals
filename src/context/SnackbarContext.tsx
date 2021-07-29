@@ -19,8 +19,8 @@ export const SnackbarProvider = ({ children }) => {
     const simple = (message: string, textColor?: string, backgroundColor?: string, maxLines?: number, isRTL?: boolean) => {
         const view = ref.current.nativeView as StackLayout
         const frame = view.getChildAt(0) as Frame
-        const page = frame.currentEntry.create()
-  
+        const page = frame.currentEntry ? frame.currentEntry.create() : null
+
         return snackbar.action({
             message,
             textColor,

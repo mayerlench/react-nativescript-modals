@@ -7,7 +7,7 @@ import { SnackbarProvider } from "../context/SnackbarContext";
 
 const StackNavigator = stackNavigatorFactory();
 
-export const mainStackNavigator = () => (
+export default () => (
     <SnackbarProvider>
         <BaseNavigationContainer ref={navigationRef}>
             <StackNavigator.Navigator
@@ -26,5 +26,4 @@ export const mainStackNavigator = () => (
             </StackNavigator.Navigator>
         </BaseNavigationContainer>
     </SnackbarProvider>
-
 );
