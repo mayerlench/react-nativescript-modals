@@ -35,7 +35,7 @@ export const SnackbarProvider = ({ children }) => {
     const action = (options: SnackBarOptions) => {
         const page = getCurrentPage()
         const view = page || getRootView()
-        return snackbar.action({ ...options, view })
+        return snackbar.action({ ...options, anchorView: view })
     }
 
     return (

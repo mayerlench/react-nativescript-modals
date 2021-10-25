@@ -1,8 +1,8 @@
 {
-  "name": "@nativescript/template-blank-react",
+  "name": "react-nativescript-modals",
   "version": "8.0.3",
   "description": "NativeScript Application",
-  "author": "Jamie Birch <14055146+shirakaba@users.noreply.github.com>",
+  "author": "Mayer Lench",
   "main": "src/app.ts",
   "scripts": {
     "postinstall": "patch-package",
@@ -10,8 +10,8 @@
     "type-check:watch": "npm run type-check -- --watch"
   },
   "license": "SEE LICENSE IN <your-license-filename>",
-  "repository": "<fill-your-repository-here>",
-  "homepage": "https://github.com/NativeScript/nativescript-app-templates",
+  "repository": "git@github.com:mayerlench/react-nativescript-modals.git",
+  "homepage": "https://github.com/mayerlench/react-nativescript-modals",
   "bugs": {
     "url": "https://github.com/NativeScript/NativeScript/issues"
   },
@@ -38,9 +38,9 @@
     "template"
   ],
   "dependencies": {
-    "@nativescript-community/ui-material-bottomsheet": "^5.3.11",
-    "@nativescript-community/ui-material-snackbar": "^5.3.11",
-    "@nativescript/core": "~8.0.8",
+    "@nativescript-community/ui-material-bottomsheet": "^6.2.1",
+    "@nativescript-community/ui-material-snackbar": "^6.2.1",
+    "@nativescript/core": "~8.1.4",
     "@react-navigation/core": "^5.15.3",
     "react": "~16.13.1",
     "react-nativescript": "^3.0.0-beta.3",
@@ -48,13 +48,13 @@
     "react-refresh": "~0.8.3"
   },
   "devDependencies": {
-    "@nativescript/android": "8.0.0",
-    "@nativescript/types": "~8.0.1",
-    "@nativescript/webpack": "beta",
+    "@nativescript/android": "8.1.1",
+    "@nativescript/types": "~8.1.1",
+    "@nativescript/webpack": "~5.0.0",
     "@pmmmwh/react-refresh-webpack-plugin": "~0.4.0-beta.5",
     "@types/react": "16.9.34",
     "patch-package": "~6.2.2",
-    "typescript": "~4.0.0"
+    "typescript": "~4.3.5"
   },
   "gitHead": "1350d382fb4b0ed4c6e9685df909518b2688e004",
   "readme": "NativeScript Application",
