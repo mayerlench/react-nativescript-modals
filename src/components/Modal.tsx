@@ -7,21 +7,22 @@ const portalRoot = new RNS.NSVRoot();
 const portalLabel = "Unique label to describe my portal";
 
 export default function Modal() {
-    const containerRef = React.useRef(null); // A ref to the container 
-    const portalRef = React.useRef(null); // A ref for the react portal
+    const containerRef = React.useRef<RNS.NSVElement<StackLayout>>(null); // A ref to the container 
+    const portalRef = React.useRef<RNS.NSVElement<AbsoluteLayout>>(null); // A ref for the react portal
 
     const handleOpenModal = () => {
-        const containerView = containerRef.current?.nativeView as StackLayout
-        const portalView = portalRef.current?.nativeView as AbsoluteLayout
+        const containerView = containerRef.current?.nativeView
+        const portalView = portalRef.current?.nativeView
 
-        containerView.showModal(portalView, {
-            animated: true,
-            //fullscreen: true, // uncomment to make modal fullscreen 
-            context: {},
-            closeCallback: (args) => {
-                console.log(`Closed with args`, args);
-            }
-        });
+        if (containerView)
+            containerView.showModal(portalView, {
+                animated: true,
+                //fullscreen: true, // uncomment to make modal fullscreen 
+                context: {},
+                closeCallback: (args) => {
+                    console.log(`Closed with args`, args);
+                }
+            });
     }
 
     const handleCloseModal = () => {

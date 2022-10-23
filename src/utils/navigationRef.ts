@@ -4,7 +4,7 @@ import * as React from 'react';
 export const navigationRef = React.createRef<NavigationContainerRef>();
 
 export function navigate(name, params) {
-    if (navigationRef.current.getRootState()) {
+    if (navigationRef?.current?.getRootState()) {
         // Perform navigation if the app has mounted
         navigationRef.current.navigate(name, params);
     } else {
@@ -15,7 +15,7 @@ export function navigate(name, params) {
 }
 
 export function goBack() {
-    if (navigationRef.current.canGoBack()) {
+    if (navigationRef?.current?.canGoBack()) {
         navigationRef.current.goBack()
     }
 }

@@ -1,5 +1,6 @@
 
 import { ViewWithBottomSheetBase } from '@nativescript-community/ui-material-bottomsheet/bottomsheet-common';
+import { StackLayout } from '@nativescript/core';
 import * as React from 'react'
 import * as RNS from 'react-nativescript'
 
@@ -9,10 +10,10 @@ const portalLabel = "bottomsheet:Unique label to describe my portal";
 
 export default function BottomSheet() {
     // A ref to the container 
-    const containerRef = React.useRef(null);
+    const containerRef = React.useRef<ViewWithBottomSheetBase>(null);
 
     // A ref for the react portal
-    const portalRef = React.useRef(null);
+    const portalRef = React.useRef<RNS.NSVElement<StackLayout>>(null);
 
     const handleOpenModal = () => {
         const container = containerRef.current!.nativeView as ViewWithBottomSheetBase
@@ -28,12 +29,13 @@ export default function BottomSheet() {
     const handleCloseModal = () => {
         const portalView = portalRef.current?.nativeView
 
-        portalView.closeBottomSheet({ name: 'react-nativescript is king' })
+        if (portalView)
+            portalView.closeBottomSheet({ name: 'react-nativescript is king' })
     }
 
     return (
         <>
-            <stackLayout ref={containerRef}>
+            <stackLayout ref={portalRef}>
                 <button text="Open bottom sheet" onTap={handleOpenModal} />
             </stackLayout>
             {/*
